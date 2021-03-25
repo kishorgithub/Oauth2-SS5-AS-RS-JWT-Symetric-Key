@@ -11,3 +11,6 @@ But They continued with Oauth resource and client support in Spring Security 5.
 It uses Spring Boot Oauth Resource jar that includes all relevant jar like Oauth resource server and spring security jar.
 We can choose either Spring Boot jar version or specific jar which are required for RS with matching version.
 Unlike legacy version it configures resource server under "WebSecurityConfigurerAdapter".
+
+Here RS doesn't require "oauth/check_token" setting for token validation from AS. It validates token by the same signing key which has been used in AS for token generation.
+Signing Key would be any random value with small restriction while creating SecretKey for Nimbus JWT Decoder, is key length should be >= 32
